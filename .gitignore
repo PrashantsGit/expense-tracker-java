@@ -1,0 +1,26 @@
+# Eclipse / STS files
+.classpath
+.project
+.settings/
+
+# Build output
+target/
+bin/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Tomcat temp files
+*.tmp
+
+# Maven
+*.war
+*.jar
+
+# IDE
+.idea/
+*.iml
