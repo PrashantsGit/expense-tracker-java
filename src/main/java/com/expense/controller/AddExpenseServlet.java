@@ -21,7 +21,7 @@ public class AddExpenseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // ✅ Get current logged-in user from session
+        // Get logged-in user from session
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("loggedUser");
 
@@ -32,7 +32,7 @@ public class AddExpenseServlet extends HttpServlet {
 
         int userId = user.getId();
 
-        // ✅ Get form data
+        // Get form data
         String title = request.getParameter("title");
         double amount = Double.parseDouble(request.getParameter("amount"));
 
@@ -43,7 +43,7 @@ public class AddExpenseServlet extends HttpServlet {
 
         String description = request.getParameter("description");
 
-        // ✅ Create Expense object
+        // Create Expense object
         Expense exp = new Expense();
         exp.setUserId(userId);
         exp.setCategoryId(categoryId);
@@ -52,7 +52,7 @@ public class AddExpenseServlet extends HttpServlet {
         exp.setExpenseDate(expenseDate);
         exp.setDescription(description);
 
-        // ✅ Save using DAO
+        // Save using DAO
         ExpenseDAO dao = new ExpenseDAO();
         boolean success = dao.addExpense(exp);
 

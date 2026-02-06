@@ -19,7 +19,7 @@ public class ExpenseDAO {
         this.conn = DBConnection.getConnection();
     }
 
-    // ================= ADD EXPENSE =================
+    //  ADD EXPENSE 
     public boolean addExpense(Expense exp) {
         String query = "INSERT INTO expenses "
                      + "(user_id, category_id, title, amount, expense_date, description) "
@@ -42,7 +42,7 @@ public class ExpenseDAO {
         return false;
     }
 
-    // ================= VIEW EXPENSES BY USER =================
+    // VIEW EXPENSES BY USER 
     public List<Expense> getExpensesByUserId(int userId) {
 
         List<Expense> list = new ArrayList<>();
@@ -79,7 +79,7 @@ public class ExpenseDAO {
         return list;
     }
 
-    // ================= DELETE EXPENSE =================
+    //  DELETE EXPENSE 
     public boolean deleteExpense(int expenseId) {
 
         String query = "DELETE FROM expenses WHERE expense_id = ?";
@@ -95,7 +95,7 @@ public class ExpenseDAO {
         return false;
     }
 
-    // ================= FILTER EXPENSES BY DATE RANGE =================
+    // FILTER EXPENSES BY DATE RANGE
     public List<Expense> getExpensesByDateRange(int userId, Date fromDate, Date toDate) {
 
         List<Expense> list = new ArrayList<>();

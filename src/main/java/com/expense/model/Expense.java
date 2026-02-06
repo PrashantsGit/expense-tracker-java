@@ -4,21 +4,21 @@ import java.sql.Date;
 
 public class Expense {
 
-    private int expenseId;      // expense_id (PK)
-    private int userId;         // user_id (FK)
-    private int categoryId;     // category_id (FK)
+    private int expenseId;      
+    private int userId;         
+    private int categoryId;     
     private String title;
     private double amount;
-    private Date expenseDate;   // Proper DATE mapping
+    private Date expenseDate;   
     private String description;
 
-    // For UI display (from JOIN)
+    
     private String categoryName;
 
-    // Default Constructor
+    
     public Expense() {}
 
-    // Constructor for adding expense
+    //  adding expense
     public Expense(int userId, int categoryId, String title,
                    double amount, Date expenseDate, String description) {
         this.userId = userId;
@@ -29,7 +29,7 @@ public class Expense {
         this.description = description;
     }
 
-    // Getters and Setters
+    
     public int getExpenseId() {
         return expenseId;
     }
