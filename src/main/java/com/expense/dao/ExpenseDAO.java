@@ -31,7 +31,7 @@ public class ExpenseDAO {
             ps.setInt(2, exp.getCategoryId());
             ps.setString(3, exp.getTitle());
             ps.setDouble(4, exp.getAmount());
-            ps.setDate(5, exp.getExpenseDate()); // Proper DATE handling
+            ps.setDate(5, exp.getExpenseDate()); 
             ps.setString(6, exp.getDescription());
 
             return ps.executeUpdate() == 1;
@@ -41,6 +41,20 @@ public class ExpenseDAO {
         }
         return false;
     }
+    //Delete expense
+    
+    public boolean deleteExpense(int expenseId, int userId) {
+        String sql = "DELETE FROM expenses WHERE expense_id = ? AND user_id = ?";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, expenseId);
+            ps.setInt(2, userId);   // safety: user can delete only own expense
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     // VIEW EXPENSES BY USER 
     public List<Expense> getExpensesByUserId(int userId) {
