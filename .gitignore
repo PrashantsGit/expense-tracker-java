@@ -1,26 +1,69 @@
-# Eclipse / STS files
-.classpath
+####################################
+# Java / Compiled files
+####################################
+*.class
+*.jar
+*.war
+*.ear
+
+####################################
+# Eclipse / STS / IDE files
+####################################
 .project
+.classpath
 .settings/
+.factorypath
+.recommenders/
 
-# Build output
-target/
+####################################
+# Build output folders
+####################################
 bin/
+target/
+build/
 
-# Logs
+####################################
+# Tomcat / Server files
+####################################
+*.tmp
 *.log
+work/
+temp/
 
-# OS files
+####################################
+# OS generated files
+####################################
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Tomcat temp files
-*.tmp
-
+####################################
 # Maven
-*.war
-*.jar
+####################################
+dependency-reduced-pom.xml
 
-# IDE
+####################################
+# Node / AdminLTE (if present)
+####################################
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+####################################
+# Environment / Secrets (if added later)
+####################################
+.env
+.env.*
+
+####################################
+# VS Code / IntelliJ (safe to ignore)
+####################################
+.vscode/
 .idea/
 *.iml
+
+####################################
+# Misc
+####################################
+*.swp
+*~
