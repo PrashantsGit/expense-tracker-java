@@ -19,6 +19,13 @@ This project allows users to manage daily expenses with authentication and sessi
 
 ---
 
+## 📌 Version History
+
+- v1: Basic expense tracking
+- v2: Analytics dashboard, budget tracking, charts, CSV export
+
+---
+
 ## 🛠 Tech Stack
 
 - **Backend:** Java, JDBC, Servlets  
